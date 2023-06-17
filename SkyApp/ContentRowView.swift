@@ -11,16 +11,20 @@ struct ContentRowView: View {
     @State var item: ItemModel
     var body: some View {
         HStack {
+            Button( action: { item.isCompleted = !item.isCompleted},
+        label: {
             Image(systemName: item.isCompleted ? "checkmark.circle" : "circle")
                 .foregroundColor(item.isCompleted ? .green : .black)
                 .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8)
-                         )
+                )
+        })
             VStack{
                 Text(item.title)
                     .bold()
                     .font(.title2)
                 Text(item.content)
                     .font(.title3)
+                    .lineLimit(1)
             }
             Spacer()
         }

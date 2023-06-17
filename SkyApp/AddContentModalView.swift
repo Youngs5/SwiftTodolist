@@ -22,6 +22,7 @@ struct AddContentModalView: View {
     @Environment(\.presentationMode) var presentation
     @Binding var title: String
     @Binding var content: String
+    @State private var showingAlert = false
     @ObservedObject var itemStore: ItemStore
     
     var body: some View {
@@ -57,6 +58,10 @@ struct AddContentModalView: View {
                 Text("Add")
                     .font(.title2)
                     .bold()
+            }.alert("Failed add to list", isPresented: $showingAlert){
+                Button("Ok") {}
+            } message: {
+                Text("Title or Content empty")
             }
         }
         .onDisappear {
@@ -66,17 +71,17 @@ struct AddContentModalView: View {
     }
     
     func addButtonClicked() {
-        itemStore.addItem(title: title, content: content)
-        title = ""
-        content = ""
-        presentation.wrappedValue.dismiss()
+            if title == "" || content == "" {
+                showingAlert = true
+            }
+        else {
+            itemStore.addItem(title: title, content: content)
+            title = ""
+            content = ""
+            presentation.wrappedValue.dismiss()
+        }
     }
     
-//    func addItem(title: String, content: String){
-//        let contentsView = ContentsView()
-//        let newItem = ItemModel(title: title, content: content, isCompleted: false)
-//        contentsView.items.append(newItem)
-//    }
 }
 
 struct AddContentModalView_Previews: PreviewProvider {

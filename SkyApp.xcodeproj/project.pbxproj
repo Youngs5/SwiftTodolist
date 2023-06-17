@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B011E532A3B873D00D649CA /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B011E522A3B873D00D649CA /* DetailView.swift */; };
 		4B9967CF2A39FE9A008263BC /* ContentRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9967CE2A39FE9A008263BC /* ContentRowView.swift */; };
 		4B9967D52A3A144C008263BC /* AddContentModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9967D42A3A144C008263BC /* AddContentModalView.swift */; };
 		4BAE08722A39C9EC00A806B9 /* SkyAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAE08712A39C9EC00A806B9 /* SkyAppApp.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B011E522A3B873D00D649CA /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		4B9967CE2A39FE9A008263BC /* ContentRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRowView.swift; sourceTree = "<group>"; };
 		4B9967D42A3A144C008263BC /* AddContentModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContentModalView.swift; sourceTree = "<group>"; };
 		4BAE086E2A39C9EC00A806B9 /* SkyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,7 +85,6 @@
 			isa = PBXGroup;
 			children = (
 				4BAE08702A39C9EC00A806B9 /* SkyApp */,
-				4BAE08812A39C9EE00A806B9 /* SkyAppTests */,
 				4BAE088B2A39C9EE00A806B9 /* SkyAppUITests */,
 				4BAE086F2A39C9EC00A806B9 /* Products */,
 			);
@@ -107,7 +108,9 @@
 				4BAE08732A39C9EC00A806B9 /* ContentView.swift */,
 				4B9967D42A3A144C008263BC /* AddContentModalView.swift */,
 				4BCA71022A39D6E300AB144B /* ContentsView.swift */,
+				4B011E522A3B873D00D649CA /* DetailView.swift */,
 				4B9967CE2A39FE9A008263BC /* ContentRowView.swift */,
+				4BAE08812A39C9EE00A806B9 /* SkyAppTests */,
 				4BAE08752A39C9EE00A806B9 /* Assets.xcassets */,
 				4BAE08772A39C9EE00A806B9 /* Preview Content */,
 			);
@@ -280,6 +283,7 @@
 				4BAE08742A39C9EC00A806B9 /* ContentView.swift in Sources */,
 				4B9967CF2A39FE9A008263BC /* ContentRowView.swift in Sources */,
 				4BAE089C2A39CC1200A806B9 /* ToDoList.swift in Sources */,
+				4B011E532A3B873D00D649CA /* DetailView.swift in Sources */,
 				4BCA71032A39D6E300AB144B /* ContentsView.swift in Sources */,
 				4BAE08722A39C9EC00A806B9 /* SkyAppApp.swift in Sources */,
 				4B9967D52A3A144C008263BC /* AddContentModalView.swift in Sources */,

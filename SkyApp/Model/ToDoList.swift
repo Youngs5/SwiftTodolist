@@ -7,26 +7,11 @@
 
 import Foundation
 
-class ItemModel: ObservableObject, Identifiable, Hashable{
-    var id: UUID
+struct ItemModel: Identifiable{
+    var id: UUID = UUID()
     var title: String
     var content: String
     var isCompleted: Bool
-    
-    func hash(into hasher: inout Hasher) {
-            hasher.combine(id)
-        }
-        
-        static func == (lhs: ItemModel, rhs: ItemModel) -> Bool {
-            lhs.id == rhs.id
-        }
-    
-    init(id: UUID = UUID(), title: String, content: String, isCompleted: Bool) {
-        self.id = id
-        self.title = title
-        self.content = content
-        self.isCompleted = false
-    }
     
     func checkItem() -> ItemModel {
         return ItemModel(id: id, title: title, content: content, isCompleted: !isCompleted)

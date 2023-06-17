@@ -20,17 +20,12 @@ class ItemStore: ObservableObject {
 }
 
 struct ContentsView: View {
-    @ObservedObject var itemStore: ItemStore
+    @StateObject var itemStore: ItemStore
     
     var body: some View {
         List{
-            ForEach(itemStore.items, id: \.self) { item in
+            ForEach(itemStore.items) { item in
                 ContentRowView(item: item)
-                    .onTapGesture {
-                        withAnimation(.linear){
-                            checkedItem(item: item)
-                        }
-                    }
             }
             .onDelete(perform: deleteItem)
             .onMove(perform: onMoveItem)
