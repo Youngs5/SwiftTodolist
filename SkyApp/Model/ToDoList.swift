@@ -13,11 +13,6 @@ struct ItemModel: Identifiable{
     var content: String
     var isCompleted: Bool
     
-    func checkItem() -> ItemModel {
-        return ItemModel(id: id, title: title, content: content, isCompleted: !isCompleted)
-    }
-    
-    
 }
 
 

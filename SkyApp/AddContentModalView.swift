@@ -38,7 +38,6 @@ struct AddContentModalView: View {
             .background(Color(uiColor: .secondarySystemBackground))
             .font(.system(size: 24))
             .foregroundColor(Color.black)
-            .padding(.bottom, 12)
             
             Text("Content")
                 .font(.title2)
@@ -51,7 +50,6 @@ struct AddContentModalView: View {
             .background(Color(uiColor: .secondarySystemBackground))
             .font(.system(size: 24))
             .foregroundColor(Color.black)
-            .padding(.bottom, 16)
             Button {
                 addButtonClicked()
             } label: {
@@ -75,7 +73,7 @@ struct AddContentModalView: View {
                 showingAlert = true
             }
         else {
-            itemStore.addItem(title: title, content: content)
+            itemStore.addEditItem(title: title, content: content)
             title = ""
             content = ""
             presentation.wrappedValue.dismiss()

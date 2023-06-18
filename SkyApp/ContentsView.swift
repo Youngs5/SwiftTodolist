@@ -10,11 +10,10 @@ import SwiftUI
 class ItemStore: ObservableObject {
     @Published var items: [ItemModel] = []
     
-    func addItem(title: String, content: String) {
+    func addEditItem(title: String, content: String) {
         let newItem = ItemModel(title: title, content: content, isCompleted: false)
         items.append(newItem)
-        print("hello \(title) and \(content)")
-        print("hello \(items)")
+        
     }
     
 }
@@ -28,7 +27,7 @@ struct ContentsView: View {
                 ContentRowView(item: item)
             }
             .onDelete(perform: deleteItem)
-            .onMove(perform: onMoveItem)
+//            .onMove(perform: onMoveItem)
         }
         .listStyle(.plain)
     }
@@ -37,15 +36,9 @@ struct ContentsView: View {
         itemStore.items.remove(atOffsets: indexSet)
     }
     
-    func onMoveItem(from: IndexSet, to: Int) {
-        itemStore.items.move(fromOffsets: from, toOffset: to)
-    }
-    
-    func checkedItem(item: ItemModel) {
-        if let index = itemStore.items.firstIndex(where: {$0.id == item.id}) {
-            itemStore.items[index] = item.checkItem()
-        }
-    }
+//    func onMoveItem(from: IndexSet, to: Int) {
+//        itemStore.items.move(fromOffsets: from, toOffset: to)
+//    }
     
 }
 
