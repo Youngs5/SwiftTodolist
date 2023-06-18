@@ -58,7 +58,11 @@ struct EditContentModalView: View {
             HStack{
                 Button (action: {
                     isInputEnabled.toggle()
-//                    editButtonClicked()
+                    if isInputEnabled == false {
+                        editButtonClicked()
+                        isInputEnabled = true
+                    }
+
                 }, label: {
                     Text(isInputEnabled ? "Complete" : "Edit")
                         .font(.title2)
@@ -87,10 +91,10 @@ struct EditContentModalView: View {
             if title == "" || content == "" {
                 showingAlert = true
             }
-        else {
-            itemStore.addEditItem(title: title, content: content)
-            presentation.wrappedValue.dismiss()
-        }
+//        else {
+//            itemStore.addEditItem(title: title, content: content)
+//            presentation.wrappedValue.dismiss()
+//        }
     }
     
     
