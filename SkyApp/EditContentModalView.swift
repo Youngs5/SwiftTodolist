@@ -25,8 +25,9 @@ struct EditContentModalView: View {
     @Binding var title: String
     @Binding var content: String
     @State private var showingAlert = false
-    @ObservedObject var itemStore: ItemStore
     @State private var isInputEnabled = false
+    var onEdit: () -> Void
+
     
     var body: some View {
         VStack {
@@ -91,10 +92,10 @@ struct EditContentModalView: View {
             if title == "" || content == "" {
                 showingAlert = true
             }
-//        else {
-//            itemStore.addEditItem(title: title, content: content)
+        else {
+            onEdit()
 //            presentation.wrappedValue.dismiss()
-//        }
+        }
     }
     
     
